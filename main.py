@@ -18,6 +18,11 @@ win = tk.Tk()
 win.title(u"yt-dlp GUI")
 win.geometry("800x450")
 
+#ラベル
+label1 = tk.Label(text=u'URL->')
+label1.place(x=10, y=20)
+
+#エントリー
 
 
 win.mainloop()
