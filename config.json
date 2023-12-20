@@ -1,1 +1,5 @@
-{"outtmpl": "test.mp4"}
+{
+    "outtmpl": "C:/Users/Lina/Desktop/%(title)s.%(ext)s",
+    "format": "bestvideo+bestaudio/best",
+    "writethumbnail": "True"
+}
