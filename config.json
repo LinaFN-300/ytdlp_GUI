@@ -1,5 +1,5 @@
 {
-    "outtmpl": "C:/Users/Lina/Desktop/%(title)s.%(ext)s",
+    "outtmpl": "/%(title)s.%(ext)s",
     "format": "bestvideo+bestaudio/best",
     "writethumbnail": "True"
 }

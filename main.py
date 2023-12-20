@@ -46,21 +46,21 @@ def start_GUI():
     global win
     win = tk.Tk()
     win.title(u"yt-dlp GUI")
-    win.geometry("500x450")
+    win.geometry("515x360")
 
     #URL入力欄
     #ラベル
     label1 = tk.Label(text=u'URL->')
     label1.place(x=5, y=20)
     #入力欄
-    InputURLBox = tk.Entry(width=60)
+    InputURLBox = tk.Entry(width=63)
     InputURLBox.place(x=45, y=20)
 
     #ダウンロードボタン
     DLButton = tk.Button(text=u'Download', width=10)
     DLButton.bind("<Button-1>", lambda event: Thread(target=download, args=(InputURLBox.get(),)).start())
     DLButton.bind("<Button-1>", lambda event: InputURLBox.delete(0, tk.END), "+")
-    DLButton.place(x=415, y=17)
+    DLButton.place(x=430, y=17)
 
     #ステータスバー
     global statusbar
@@ -70,24 +70,24 @@ def start_GUI():
 
     #進捗
     global progress_info, logbox
-    logbox = tk.Text(width=60, height=10)
+    logbox = tk.Text(width=60, height=20)
     logbox.bind("<Key>", lambda a: "break")
     logbox.place(x=45, y=70)
 
     #設定画面を開くボタン
     ConfigButton = tk.Button(text=u'Config', width=10)
     ConfigButton.bind("<Button-1>", lambda event: config_window())
-    ConfigButton.place(x=415, y=42)
+    ConfigButton.place(x=430, y=42)
 
     win.mainloop()
 
-#設定画面
+#設定画面(サブウィンドウ)
 def config_window():
     #windowの作成
     global config_win
     config_win = tk.Toplevel(win)
     config_win.title(u"Config Menu")
-    config_win.geometry("500x450")
+    config_win.geometry("460x200")
 
     #保存先のpath指定
     #ラベル
@@ -145,8 +145,8 @@ def config_window():
     CookieButton.bind("<Button-1>", lambda event: InputCookieBox.insert(tk.END, filedialog.askopenfilename()))
     
     #設定を保存するボタン
-    SaveButton = tk.Button(config_win, text=u'保存', width=10)
-    SaveButton.place(x=415, y=415)
+    SaveButton = tk.Button(config_win, text=u'保存', width=63)
+    SaveButton.place(x=5, y=150)
     SaveButton.bind("<Button-1>", lambda event: SaveConfig())
     
     #設定を保存
