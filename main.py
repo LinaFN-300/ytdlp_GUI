@@ -158,11 +158,13 @@ def config_window():
             conf = dict(conf, postprocessors=[{'key': 'FFmpegExtractAudio', 'preferredcodec': 'mp3', 'preferredquality': '192'}])
         else:
             conf = dict(conf, format="bestvideo+bestaudio/best")
+            conf = dict(conf, postprocessors=[{'key': 'FFmpegVideoConvertor', 'preferedformat': 'mp4'}])
         if CookieFromBrowser.get() == True:
             conf = dict(conf, cookieflombrowser=InputBrowserBox.get())
         if Cookie.get() == True:
             conf = dict(conf, cookiefile=InputCookieBox.get())
         config_write(conf)
+        config_win.destroy()
             
     
     config_win.mainloop()

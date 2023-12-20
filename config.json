@@ -1,5 +1,0 @@
-{
-    "outtmpl": "/%(title)s.%(ext)s",
-    "format": "bestvideo+bestaudio/best",
-    "writethumbnail": "True"
-}
